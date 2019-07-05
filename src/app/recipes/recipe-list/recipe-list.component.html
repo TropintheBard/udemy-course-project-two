@@ -1,1 +1,29 @@
-<p>recipe-list works!</p>
+<div class="row">
+        <div class="col-xs-12">
+            <button class="btn btn-success">New Recipe</button> <!-- This button will eventually make a new recipe-->
+        </div>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-xs-12">
+            <!--Be able to replicate this section as often as needed-->
+            <a href="#" 
+            class="list-group-item clearfix" 
+            *ngFor="let recipe of recipes">
+    
+                <div class="pull-left">
+                    <h4 class="list-group-item-heading">{{recipe.name}}</h4> <!--Be able to put data in here instead of just text-->
+                    <p class="list-group-item-text">{{recipe.description}}</p>
+                </div>
+                <span class="pull-right">
+                    <img
+                    [src]="recipe.imagePath"
+                    alt="{{recipe.name}}" 
+                    class="img-responsive" 
+                    style="max-height: 50px;">
+                </span>
+    
+            </a>
+            <app-recipe-item></app-recipe-item>
+        </div>
+    </div>
